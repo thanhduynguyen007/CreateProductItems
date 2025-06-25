@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>DemoEcomer</title>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="header-logo">
+                    <div class="logo-icon">
+                        <img src="Icon.png" alt="">
+                    </div>
+                    <div class="logo-text">
+                        <h3>NextCent</h3>
+                    </div>
+                </div>
+                <!-- <nav class="header-nav">
+                    <ul>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                </nav> -->
+                <div class="header-actions">
+                    <button class="notification-btn"><i class="fa-solid fa-bell"></i></button>
+                    <div class="profile-avatar"><i class="fa-solid fa-user"></i></div>
+                </div>
+            </div>
+
+        </div>
+    </header>
+    <main class="main-content">
+        <div class="container">
+            <div class="controls">
+                <div class="search-list">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input type="text" class="search-input" placeholder="Tìm kiếm">
+                </div>
+                <button class="add-btn">Thêm sản phẩm</button>
+            </div>
+            <div class="products">
+                <div class="product-list">
+                </div>
+            </div>
+        </div>
+    </main>
+    <div class="modal-overlay" id="addProductModal">
+        <div class="modal">
+            <div class="modal-header">
+                <div class="modal-title">Add new Product</div>
+                <button class="modal-close"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <div class="modal-body">
+                <form action="" class="product-form">
+                    <div class="form-group">
+                        <label for="productTitle" class="form-label">Tên sản phẩm:</label>
+                        <input type="text" id="productTitle" class="form-input" name="title" placeholder="Tên sản phẩm">
+                    </div>
+                    <div class="form-group">
+                        <label for="productDescription" class="form-label">Mô tả:</label>
+                        <textarea name="description" id="productDescription" class="form-placeholder" placeholder="Mô tả"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="productImage" class="form-label">Hình ảnh:</label>
+                        <input type="text" name="image" id="productImage" class="form-input" placeholder="Nhập đường dẫn hình ảnh">
+                    </div>
+                    <div class="form-group">
+                        <label for="productPrice" class="form-label">Giá:</label>
+                        <input type="number" id="productPrice" class="form-input" name="price" placeholder="Nhập giá">
+                    </div>
+                    <div class="form-group">
+                        <div class="details">
+                            <div>
+                                <label for="productDiscout" class="form-label" >Giảm giá(%):</label>
+                                <input step="0.1" type="number" id="productDiscout" class="form-input" name="discount" placeholder="GIẢM GIÁ">
+                            </div>
+                            <div>
+                                <label for="productStock" class="form-label" >Số lượng:</label>
+                                <input type="number" id="productStock" class="form-input" name="stock" placeholder="Số lượng">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-cancel btn-secondary">Cancel</button>
+                        <button type="submit" class="btn btn-primary btn-submit">Create </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="message">
+        <div class="message-box">
+            <div class="message-header">
+                <h3 class="message-title">Bạn chắc chắn xoá</h3>
+                <div class="message-close">
+                    <i class="fa-solid fa-xmark"></i>
+                </div>
+            </div>
+            <div class="message-body">
+                <button class="btn btn-message btn-no" value="no">No</button>
+                <button class="btn btn-message btn-yes" value="yes">Yes</button>
+            </div>
+        </div>
+    </div>
+    
+    <script src="main.js"></script>
+</body>
+</html>
