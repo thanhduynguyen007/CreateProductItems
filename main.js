@@ -155,14 +155,34 @@ const btnMessageClose = document.querySelector(".btn.btn-message.btn-no");
 btnMessageClose.addEventListener("click", () => {
     message.className = "message";
 })
-function renderItems() {
+
+// tìm kiếm 
+const searchInput = document.querySelector(".search-input");
+
+searchInput.addEventListener("input", () => {
+    const keyword = searchInput.value.toLowerCase().trim();
+
+    if (keyword === "") {
+        renderItems(); // Không nhập gì → hiện tất cả
+        return;
+    }
+
+    const filteredItems = productItems.filter(item => 
+        item.title.toLowerCase().includes(keyword) ||
+        item.description.toLowerCase().includes(keyword)
+    );
+
+    renderItems(filteredItems); // Gọi lại hàm bạn đang có, nhưng với danh sách đã lọc
+});
+
+function renderItems(items = productItems) {
     if (!productItems.length) {
         productList.innerHTML =
             `<p>Chưa có sản phẩm nào.</p>`;
         return;
     }
 
-    const htmls = productItems.map((item, index) => (
+    const htmls = items.map((item, index) => (
         ` <div class="product-item">
                 <div class="product-header">
                     <div class="product-image">
